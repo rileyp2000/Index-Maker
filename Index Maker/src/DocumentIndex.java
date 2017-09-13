@@ -10,20 +10,6 @@ public class DocumentIndex extends ArrayList<IndexEntry>{
 	public DocumentIndex(){
 		super();
 	}
-	/**
-	 * 
-	 * @param word
-	 * @return
-	 */
-	private int foundOrInserted(String word){
-		word = word.toUpperCase();
-		for(int i= 0; i < super.size(); i++){
-			if(super.get(i).getWord().equals(word))
-				return i;
-		
-		}//NEED TO FIX SO ADDS IN ALPHABETICAL
-		return -1;
-	}
 	
 	/**
 	 * 
@@ -32,6 +18,34 @@ public class DocumentIndex extends ArrayList<IndexEntry>{
 	public DocumentIndex(int cap){
 		super(cap);
 	}
+	/**
+	 * 
+	 * @param word
+	 * @return
+	 */
+	private int foundOrInserted(String word){
+		word = word.toUpperCase();
+		boolean isInserted = false;
+		int i = 0; 
+		String compWord = "";
+		while(i < super.size() && !isInserted) {
+			compWord = super.get(i).getWord();
+			if(compWord.equals(word))
+				return i;
+			else if(compWord.compareTo(word)<0)
+					i++;
+			else {
+				this.add(i, new IndexEntry(word));
+				isInserted = true;
+				return i;
+			}
+		}
+			this.add(new IndexEntry(word));
+			return i;
+	}
+	
+
+
 	
 	/**
 	 * 
@@ -39,11 +53,7 @@ public class DocumentIndex extends ArrayList<IndexEntry>{
 	 * @param num
 	 */
 	public void addWord(String word, int num){
-		if(foundOrInserted(word) == -1){
-			IndexEntry temp = new IndexEntry(word);
-			temp.add(num);
-			super.add(new IndexEntry(word)); //NEED TO FIX SO ADDS IN ALPHABETICAL
-		}
+		this.get(foundOrInserted(word)).add(num);
 	}
 	
 	/**
