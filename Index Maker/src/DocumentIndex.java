@@ -64,7 +64,7 @@ public class DocumentIndex extends ArrayList<IndexEntry>{
 	public void addAllWords(String str, int num){
 		String[] words = str.split("\\W+");
 		for(String s: words) {
-			if(s.equals(""))
+			if(!s.equals(""))
 				addWord(s,num);
 	}
 	}
