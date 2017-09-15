@@ -1,5 +1,5 @@
 /**
- * <p></p>
+ * <p>This is the index of the document</p>
  * @author Patrick Riley
  */
 
@@ -21,8 +21,8 @@ public class DocumentIndex extends ArrayList<IndexEntry>{
 	}
 	/**
 	 * 
-	 * @param word
-	 * @return
+	 * @param word word to find if inserted
+	 * @return int index of return
 	 */
 	private int foundOrInserted(String word){
 		word = word.toUpperCase();
@@ -50,8 +50,8 @@ public class DocumentIndex extends ArrayList<IndexEntry>{
 	
 	/**
 	 * 
-	 * @param word
-	 * @param num
+	 * @param word add this word
+	 * @param num on this page line
 	 */
 	public void addWord(String word, int num){
 		this.get(foundOrInserted(word)).add(num);
@@ -59,8 +59,8 @@ public class DocumentIndex extends ArrayList<IndexEntry>{
 	
 	/**
 	 * 
-	 * @param str
-	 * @param num
+	 * @param str a line of text
+	 * @param num the line number of the text
 	 */
 	public void addAllWords(String str, int num){
 		String[] words = str.split("\\W+");

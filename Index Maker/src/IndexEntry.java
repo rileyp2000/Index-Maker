@@ -12,7 +12,7 @@ public class IndexEntry {
 	
 	/**
 	 * <p>Constructs a new IndexEntry object</p>
-	 * @param wd
+	 * @param wd word to add
 	 */
 	public IndexEntry(String wd){
 		word = wd.toUpperCase();

@@ -1,13 +1,13 @@
 /**
- * <p></p>
+ * 
  * @author Patrick Riley
  */
 
 /**
- * This program takes a text file, creates an index (by line numbers)
+ * <p>This program takes a text file, creates an index (by line numbers)
  *  for all the words in the file and writes the index
  *  into the output file.  The program takes input and output file names
- *  from the command-line args or prompts the user for the file names.
+ *  from the command-line args or prompts the user for the file names.</p>
  */
 
 import java.io.FileReader;
