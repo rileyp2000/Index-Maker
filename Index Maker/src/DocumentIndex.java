@@ -5,6 +5,7 @@
 
 import java.util.ArrayList;
 
+@SuppressWarnings("serial")
 public class DocumentIndex extends ArrayList<IndexEntry>{
 	
 	public DocumentIndex(){
